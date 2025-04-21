@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>EduNotify – Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+  <form action="/login" method="POST" class="bg-white p-6 rounded shadow-md w-full max-w-sm space-y-4">
+    <h2 class="text-xl font-semibold text-center text-indigo-600">EduNotify Login</h2>
+
+    {% if error %}
+      <p class="text-red-500 text-sm">{{ error }}</p>
+    {% endif %}
+
+    <div>
+      <label for="userid" class="block font-medium">ID</label>
+      <input type="text" name="userid" id="userid" class="w-full border p-2 rounded" required />
+    </div>
+
+    <div>
+      <label for="email" class="block font-medium">Email</label>
+      <input type="email" name="email" id="email" class="w-full border p-2 rounded" required />
+    </div>
+
+    <button type="submit" class="w-full bg-indigo-600 text-white py-2 rounded hover:bg-indigo-700">
+      Login
+    </button>
+  </form>
+</body>
+</html>
