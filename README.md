@@ -103,33 +103,6 @@ Install dependencies locally:
 pip install -r requirements.txt
 ```
 
----
-
-## 📸 Screenshots (optional)
-
-> Add screenshots of:
-> - Login Page
-> - Admin Dashboard
-> - Notice Posting
-> - Filtered Notices by Department/Year
-
----
-
-## 📚 Academic Context
-
-EduNotify was developed as a final-year academic project for the **Cloud Computing** subject at **AP Shah Institute of Technology (APSIT), Thane**. It is intended to demonstrate real-world deployment of cloud-native web apps using AWS infrastructure.
-
----
-
-## 👨‍💻 Author
-
-**Mihir Amin**  
-Final Year B.E. Computer Engineering  
-AP Shah Institute of Technology, Thane  
-GitHub: [@mihiramin](https://github.com/mihiramin)
-
----
-
 ## 🤝 Contributing
 
 Contributions are welcome! Feel free to fork this repository and open pull requests to add features, fix bugs, or improve the documentation.
