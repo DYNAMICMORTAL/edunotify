@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% block content %}
+  <h2 class="text-xl font-semibold mb-4">📃 All Notices</h2>
+
+  <!-- Filter Form -->
+  <form action="/view-notices" method="POST" class="bg-white p-6 rounded shadow mb-6 space-y-4">
+    <h2 class="text-lg font-semibold">Filter Notices</h2>
+    <div class="grid grid-cols-2 gap-4">
+      <select name="department" class="w-full p-2 border rounded">
+        <option value="">Select Department</option>
+        <option value="Computer Science">Computer Science</option>
+        <option value="Mechanical">Mechanical</option>
+        <option value="Civil">Civil</option>
+        <option value="Electrical">Electrical</option>
+      </select>
+      <select name="year" class="w-full p-2 border rounded">
+        <option value="">Select Year</option>
+        <option value="1">First Year</option>
+        <option value="2">Second Year</option>
+        <option value="3">Third Year</option>
+        <option value="4">Fourth Year</option>
+      </select>
+    </div>
+    <button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">
+      View Notices
+    </button>
+  </form>
+
+  <!-- Notices Section -->
+  {% if notices %}
+    <h2 class="text-xl font-semibold mb-4">📋 Notices</h2>
+    {% for n in notices %}
+      <div class="bg-white p-4 rounded shadow mb-4">
+        <h3 class="text-lg font-bold">{{ n.title }}</h3>
+        <p>{{ n.description }}</p>
+        <div class="text-sm text-gray-500 mt-2">Department: {{ n.department }} | Year: {{ n.year }}</div>
+        <div class="text-sm text-gray-500">Posted on: {{ n.timestamp }}</div>
+        {% if n.file_url %}
+          <a href="{{ n.file_url }}" class="text-indigo-600 hover:underline" target="_blank">View Attachment</a>
+        {% endif %}
+      </div>
+    {% endfor %}
+  {% else %}
+    <p class="text-gray-500">No notices found.</p>
+  {% endif %}
+{% endblock %}

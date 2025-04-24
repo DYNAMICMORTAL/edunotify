@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+{% block content %}
+  <h2 class="text-2xl font-bold mb-2">📢 Post a New Notice</h2>
+  <p class="text-gray-600 mb-6">Fill out the form below to post a new notice to the dashboard.</p>
+
+  <div class="bg-white p-6 rounded shadow">
+    <div class="mb-4 border-b border-gray-200">
+      <ul class="flex space-x-4">
+        <li>
+          <a href="#" class="text-blue-600 font-semibold border-b-2 border-blue-600 pb-2">Basic Info</a>
+        </li>
+        <li>
+          <a href="#" class="text-gray-500 hover:text-blue-600">Notification Settings</a>
+        </li>
+        <li>
+          <a href="#" class="text-gray-500 hover:text-blue-600">Advanced Options</a>
+        </li>
+      </ul>
+    </div>
+
+    <form method="POST" enctype="multipart/form-data" class="space-y-4">
+      <!-- Title -->
+      <div>
+        <label for="title" class="block text-sm font-medium text-gray-700">Title</label>
+        <input type="text" id="title" name="title" placeholder="Enter notice title"
+          class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+      </div>
+
+      <!-- Description -->
+      <div>
+        <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
+        <textarea id="description" name="description" rows="4" placeholder="Enter notice details"
+          class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"></textarea>
+      </div>
+
+      <!-- Department and Year -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label for="department" class="block text-sm font-medium text-gray-700">Department</label>
+          <select id="department" name="department"
+            class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+            <option value="">Select department</option>
+            <option value="Computer Science">Computer Science</option>
+            <option value="Mechanical">Mechanical</option>
+            <option value="Civil">Civil</option>
+            <option value="Electrical">Electrical</option>
+          </select>
+        </div>
+        <div>
+          <label for="year" class="block text-sm font-medium text-gray-700">Year</label>
+          <select id="year" name="year"
+            class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+            <option value="">Select year</option>
+            <option value="1">First Year</option>
+            <option value="2">Second Year</option>
+            <option value="3">Third Year</option>
+            <option value="4">Fourth Year</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Expiry Date -->
+      <div>
+        <label for="expiry_date" class="block text-sm font-medium text-gray-700">Expiry Date (Optional)</label>
+        <input type="date" id="expiry_date" name="expiry_date"
+          class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+      </div>
+
+      <!-- Buttons -->
+      <div class="flex justify-end space-x-4">
+        <button type="button"
+          class="bg-gray-100 text-gray-800 px-4 py-2 rounded shadow hover:bg-gray-200">Save as Draft</button>
+        <button type="submit"
+          class="bg-blue-600 text-white px-4 py-2 rounded shadow hover:bg-blue-700">Post Notice</button>
+      </div>
+    </form>
+  </div>
+{% endblock %}
